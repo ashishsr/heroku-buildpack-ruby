@@ -39,6 +39,8 @@ class LanguagePack::JvmInstaller
 
     jvm_version = system_properties['java.runtime.version']
     case jvm_version
+    when "1.8", "8"
+      fetch_env_untar('JDK_URL_1_8') || fetch_untar(JVM_1_8_PATH, "openjdk-8")  
     when "1.9", "9"
       fetch_env_untar('JDK_URL_1_9') || fetch_untar(JVM_1_9_PATH, "openjdk-9")
     when "1.7", "7"
