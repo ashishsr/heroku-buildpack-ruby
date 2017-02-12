@@ -32,10 +32,10 @@ class LanguagePack::JvmInstaller
   end
 
   def install(jruby_version, forced = false)
-    if Dir.exist?(".jdk")
-      topic "Using pre-installed JDK"
-      return
-    end
+    #if Dir.exist?(".jdk")
+    #  topic "Using pre-installed JDK"
+    #  return
+    #end
 
     jvm_version = system_properties['java.runtime.version']
     jvm_version = "1.8"
